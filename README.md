@@ -35,6 +35,8 @@ contract MyToken {
         if (balances[_address] >= _value) {
             totalSupply -= _value;
             balances[_address] -= _value;
+        } else {
+            revert("Too much supply inputted");
         }
     }
 
